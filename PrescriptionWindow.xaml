@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp6.PrescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="PrescriptionWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Top Bar -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button Content="Add Prescription" Width="150" Click="AddPrescriptionButton_Click"  Foreground="White" Background="#455763"/>
+        </StackPanel>
+
+        <!-- Prescription List -->
+        <ListView x:Name="PrescriptionList" Grid.Row="1" Margin="0,10,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding PrescriptionDate}" Width="120" />
+                    <GridViewColumn Header="Notes" DisplayMemberBinding="{Binding Notes}" Width="200" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
